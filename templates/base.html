@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>saviour static blog</title>
+</head>
+
+<body>
+    <h1><a href="{{ url_for("index") }}">saviour blog</a></h1>
+    {% block content %}
+    this is the main page
+    {% endblock content %}
+</body>
+</html>

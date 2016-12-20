@@ -19,15 +19,21 @@ POSTS_FILE_EXTENSION = '.md'
 
 #markdown rendering class
 class Post(object):
-	def __init__(self, path):
-		self.path = path
+	def __init__(self, path, root_dir=''):
+		self.urlpath = os.path.splitext(path.strip('/'))[0]
+		self.filepath = os.path.join(root_dir, path.strip('/'))
 		self._initialize_metadata()
 
+	#handles the markdown conversion
 	@cached_property
 	def html(self):
-		with open(self.path, 'r') as fin:
+		with open(self.filepath, 'r') as fin:
 			content = fin.read().split('\n', 1)[1].strip()
-		return markdown.markdown(content)  
+		return markdown.markdown(content)
+
+	@property
+	def url(self):
+		return url_for('post', path=self.urlpath)
 	
 	def _initialize_metadata(self):
 			content = ''
@@ -50,15 +56,15 @@ def format_date(value, format='%B %d, %Y'):
 
 @app.route('/')
 def index():
-	dir_path = os.path.dirname(os.path.realpath(__file__))
+	#dir_path = os.path.dirname(os.path.realpath(__file__))
 	#print dir_path
-	return 'hello world'
+	posts = [Post('hello.md', root_dir='posts')]
+	return render_template('index.html', posts=posts)
 
 @app.route('/blog/<path:path>/')
-def post(path):	
-	#import ipdb; ipdb.set_trace()
+def post(path):
 	path = os.path.join('posts', path + POSTS_FILE_EXTENSION)
-	post = Post(path)
+	post = Post(path + POSTS_FILE_EXTENSION, root_dir='posts')
 	return render_template('post.html', post=post)
 
 if __name__=='__main__':

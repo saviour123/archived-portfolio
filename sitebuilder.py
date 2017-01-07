@@ -14,11 +14,16 @@ pages = FlatPages(app)
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index.html', pages=pages)
 
 @app.route("/<path:path>/")
 def page(path):
     return pages.get_or_404(path).html
 
+@app.route("/tag/<string:tag>/")
+def tag(tag):
+    tagged = [p for p in pages if tag in p.meta.get('tags', [])]
+    return render_template('tag.html', pages=tagged, tag=tag)
+
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(port=8000)

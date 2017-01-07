@@ -1,14 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>{% block head %}saviour static blog{% endblock head %}</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<link rel="stylesheet" href="">
 </head>
-
-<body>
-    <h1><a href="{{ url_for("index") }}">saviour blog</a></h1>
-    {% block content %}
-    this is the main page
-    {% endblock content %}
-</body>
+    <body>
+        <h1><a href="{{ url_for("index") }}">My Site</a></h1>
+        {% block content %}
+            <p>Default contents to be displayed here</p>
+        {% endblock content %}
+    </body>
 </html>
+

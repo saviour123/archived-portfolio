@@ -14,9 +14,24 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 
+#main routes
 @app.route("/")
 def index():
     return render_template('index.html', pages=pages)
+
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+@app.route("/projects")
+def projects():
+    return render_template('projects.html')
+
+@app.route("/articles")
+def articles():
+    return render_template('articles.html')
+# main routes end
+
 
 @app.route("/<path:path>/")
 def page(path):

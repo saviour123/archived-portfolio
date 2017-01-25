@@ -15,13 +15,13 @@
 	<div id="layout" class="pure-g">
 		<div class="sidebar pure-u-1 pure-u-md-1-4">
 			<div class="header">
-				<img src="{{ url_for('static',filename='img/profile.jpeg')}}">
+				
 				<h1 class="brand-title">Saviour Gidi</h1>
 				<h2 class="brand-tagline">GIS Technician, Python Developer</h2>
 
 				<nav class="nav">
 					<ul class="nav-list">
-						<li class="nav-item"><a class="pure-button" href="{{ url_for('index') }}">Start Here</a></li>
+						<li class="nav-item"><a class="pure-button" href="{{ url_for('index') }}">Home</a></li>
 						<li class="nav-item"><a class="pure-button" href="{{ url_for('articles') }}">Articles</a></li>
 						<li class="nav-item"><a class="pure-button" href="{{ url_for('projects') }}">Projects</a></li>
 						<li class="nav-item"><a class="pure-button" href="{{ url_for('about') }}">About</a></li>
@@ -34,16 +34,16 @@
 			<div>
 
 				<p><img src="{{ url_for('static', filename='img/banner.jpeg') }}" alt="" class="pure-img-responsive"></p>
-				<h1>Let's Build Something Cool Together</h1>
-				<p>Hi, I'm Jane Doe – a Python software engineer from Vancouver, Canada</p>
-				<h1><a href="{{ url_for("index") }}">My Site</a></h1>
-
-
 				{% block content %}
-					<p>Main Content Goes Herer</p>
+				<p>Main Content Goes Herer</p>
 				{% endblock %}
+
 			</div>
 		</div>
+		
 	</div>
+<!-- 	<div class="footer pure-g">
+			<img src="{{ url_for('static',filename='img/profile.jpeg')}}">
+        </div> -->
 </body>
 </html>

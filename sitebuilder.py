@@ -1,5 +1,4 @@
 import sys
-
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
@@ -30,12 +29,18 @@ def projects():
 @app.route("/articles")
 def articles():
     return render_template('articles.html')
-# main routes end
 
 
-@app.route("/<path:path>/")
+@app.route('/<path:path>/')
 def page(path):
-    return pages.get_or_404(path).html
+    page = pages.get_or_404(path)
+    return render_template('page.html', page=page)
+
+    
+
+# @app.route("/<path:path>/")
+# def page(path):
+#     return pages.get_or_404(path).html
 
 @app.route("/tag/<string:tag>/")
 def tag(tag):

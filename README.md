@@ -13,8 +13,8 @@ From the console.
 
 In your browser, open 
 
-127.0.0.1:8000
+http://127.0.0.1:5000/
 
 Feel free to branch it.
 
-New site here: (saviourgidi)[https://saviourgidi.appspot.com]
+New site here: [saviourgidi](https://saviourgidi.appspot.com)

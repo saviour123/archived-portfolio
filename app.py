@@ -17,8 +17,7 @@ freezer = Freezer(app)
 
 @app.route("/")
 def index():
-    articles = (p for p in pages if 'date' in p.meta)
-    latest = sorted(articles, reverse=True, key=lambda p: str(p.meta['date']))
+    latest = get_pages(pages)
     return render_template('index.html', pages=latest)
 
 
@@ -42,6 +41,19 @@ def page(path):
 def tag(tag):
     tagged = [p for p in pages if tag in p.meta.get('tags', [])]
     return render_template('tag.html', pages=tagged, tag=tag)
+
+
+# helpers
+def get_pages(articles, offset=None, limit=None, section=None, year=None):
+    """ Retrieves pages matching passec criterias.
+    """
+    # filter unpublished article
+    if not app.debug:
+        # articles = (p for p in pages if 'date' in p.meta) validadate the presence of date
+        articles = (p for p in articles if p.meta.get('published') is True)
+        return sorted(articles, reverse=True, key=lambda p: str(p.meta['date']))
+    else:
+        return sorted(articles, reverse=True, key=lambda p: str(p.meta['date']))
 
 
 if __name__ == '__main__':

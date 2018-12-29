@@ -5,27 +5,22 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: "PT Mono", 'Lato', sans-serif;
+    /* font-family: "PT Mono", 'Lato', sans-serif; */
     font-size: 18px;
+    font-family: "Asap",Palatino,"Hoefler Text",Georgia,serif;
     /*font-family: "helvetica neue", "helvetica", sans-serif;*/
-}
-
-p {
-    font-size: 18px;
+    color: #333334;
 }
 
 a {
     text-decoration: none;
-    color: rgb(107, 46, 209);
+    color: rgb(61, 146, 201)
 }
 a:hover,
 a:focus {
     text-decoration: none;
 }
 
-h3 {
-    font-weight: 100;
-}
 
 /* LAYOUT CSS */
 .pure-img-responsive {
@@ -92,16 +87,19 @@ h3 {
 
 .content {
     padding: 2em 1em 0;
+    text-align:justify;
 }
 
 .post {
     padding-bottom: 2em;
 }
+
 .post-title {
     font-size: 2em;
     color: #222;
     margin-bottom: 0.2em;
 }
+
 .post-avatar {
     border-radius: 50px;
     float: right;
@@ -263,7 +261,7 @@ hr::after {
 .mainList > li{
     list-style-type: none;
     text-decoration: none;
-    /*margin-left: -39px;*/
+    margin-left: -39px;
 }
 
 #footer > p, #footer > p > a{
@@ -273,15 +271,33 @@ hr::after {
 }
 
 h1{
-    font: bold 4em/1.2 'Bad Script';
+    font-size: 1.5em;
+    color: #222;
+    margin-bottom: 0.1em;
 }
 
-code.prettyprint{
-  background: #8d8d8d !important;
-  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
-  font-size: 11px;
-  line-height: 1.5;
-  color: #24b994;
-  border: 1px solid #cccccc;
-  padding: 10px;
+pre {
+    padding: 14px;
+    color: #eee;
+    background: #000;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    white-space: pre;
+    overflow: auto;
 }
+code, pre {
+    font-family: monospace;
+    font-size: 85%;
+    color: #ff9191;
+    /* color: #555; */
+    line-height: 21px;
+}
+pre code {
+    color: #dea0a0;
+    /* color: #eee; */
+}
+
+/* .content > p {
+    text-align:justify !important;
+} */

@@ -279,7 +279,7 @@ h1{
 pre {
     padding: 14px;
     color: #eee;
-    background: #000;
+    background: #f7f7f7;;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -289,15 +289,18 @@ pre {
 code, pre {
     font-family: monospace;
     font-size: 85%;
-    color: #ff9191;
-    /* color: #555; */
+    color: #fe4444;
     line-height: 21px;
 }
 pre code {
-    color: #dea0a0;
-    /* color: #eee; */
+    color: #37474f;
 }
 
+blockquote {
+    font-style: italic;
+    border-left: 7px solid #eee;
+    padding-left: 14px;
+}
 /* .content > p {
     text-align:justify !important;
 } */

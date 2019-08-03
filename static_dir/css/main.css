@@ -1,26 +1,28 @@
-
 @import url('https://fonts.googleapis.com/css?family=PT Mono');
 
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /* font-family: "PT Mono", 'Lato', sans-serif; */
     font-size: 18px;
-    font-family: "Asap",Palatino,"Hoefler Text",Georgia,serif;
-    /*font-family: "helvetica neue", "helvetica", sans-serif;*/
-    color: #333334;
+    font-family: "PT Mono", 'Lato', sans-serif;
+    /* font-family: "Asap",Palatino,"Hoefler Text",Georgia,serif; */
+    /* color: #333334; */
+    /* color: red; */
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: rgb(61, 146, 201)
 }
 a:hover,
 a:focus {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
+.social-tab > a {
+    text-decoration: none;
+}
 
 /* LAYOUT CSS */
 .pure-img-responsive {
@@ -279,7 +281,8 @@ h1{
 pre {
     padding: 14px;
     color: #eee;
-    background: #f7f7f7;;
+    background: #f7f7f7;
+    /* background: #c6c6c6; */
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -287,13 +290,14 @@ pre {
     overflow: auto;
 }
 code, pre {
-    font-family: monospace;
-    font-size: 85%;
-    color: #fe4444;
+    /* font-family: "Asap",Palatino,"Hoefler Text",Georgia,serif; */
+    font-family: "Roboto Mono", monospace;
+    font-size: 93%;
     line-height: 21px;
 }
 pre code {
-    color: #37474f;
+    /* color: #37474f; */
+    color: black;
 }
 
 blockquote {
@@ -301,6 +305,8 @@ blockquote {
     border-left: 7px solid #eee;
     padding-left: 14px;
 }
-/* .content > p {
-    text-align:justify !important;
-} */
+
+.about-page {
+    color: #656466;
+
+}

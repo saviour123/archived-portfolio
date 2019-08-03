@@ -43,9 +43,28 @@ def tag(tag):
     return render_template('tag.html', pages=tagged, tag=tag)
 
 
+@app.route('/feed/')
+def feed():
+    articles = get_pages(pages, limit=FEED_MAX_LINKS)
+    now = datetime.now()
+    return render_template('base.rss', pages=articles, build_date=now)
+
+
+@app.route('/sitemap.xml')
+def sitemap():
+    today = date.today()
+    recently = date(year=today.year, month=today.month, day=1)
+    return render_template('sitemap.xml', pages=get_pages(pages),
+        today=today, recently=recently)
+
+@app.route('/<string:section>/feed/')
+def feed_section(section):
+    articles = get_pages(pages, limit=FEED_MAX_LINKS, section=section)
+    return render_template('%s/feed.rss' % section, pages=articles, build_date=datetime.now())
+
 # helpers
 def get_pages(articles, offset=None, limit=None, section=None, year=None):
-    """ Retrieves pages matching passec criterias.
+    """ Retrieves pages matching pass criteria.
     """
     # filter unpublished article
     if not app.debug:
@@ -53,6 +72,7 @@ def get_pages(articles, offset=None, limit=None, section=None, year=None):
         articles = (p for p in articles if p.meta.get('published') is True)
         return sorted(articles, reverse=True, key=lambda p: str(p.meta['date']))
     else:
+        articles = (p for p in articles if p.meta.get('published') is True)
         return sorted(articles, reverse=True, key=lambda p: str(p.meta['date']))
 
 

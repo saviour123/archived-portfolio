@@ -296,7 +296,6 @@ code, pre {
     line-height: 21px;
 }
 pre code {
-    /* color: #37474f; */
     color: black;
 }
 
@@ -307,6 +306,10 @@ blockquote {
 }
 
 .about-page {
-    color: #656466;
-
+    color: black;
+    font-weight: 200;
+}
+.about-page p,ul, li {
+    color: #404041;
+    font-weight: 50;
 }

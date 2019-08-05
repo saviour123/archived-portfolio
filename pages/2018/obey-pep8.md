@@ -5,7 +5,7 @@ published: True
 subtitle: If you are in the python world, it's quite important to make your code PEP8 complaint!
 
 
-Quick Tip For Pythonistas - This is short a short post.
+Quick Tip For Pythonistas - This is a short post.
 
 To check if your code is pep8 compliant.
 In the root of your folder.

@@ -9,7 +9,13 @@
     /* font-family: "Asap",Palatino,"Hoefler Text",Georgia,serif; */
     /* color: #333334; */
     /* color: red; */
-}
+   background-color: #ffffff;
+   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
+   background-attachment: fixed;
+
+
+ }
+
 
 a {
     text-decoration: underline;
@@ -97,7 +103,7 @@ a:focus {
 }
 
 .post-title {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #222;
     margin-bottom: 0.2em;
 }
